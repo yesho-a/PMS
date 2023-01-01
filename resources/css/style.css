@@ -1,0 +1,53 @@
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.col-md-11 {
+    background-color: bisque;
+}
+
+.order {
+    display: none;
+}
+
+.tog {
+    padding-left: 0.5rem;
+}
+
+.col-md-1 {
+    background-color: brown;
+    font-size: larger;
+}
+
+.tim {
+    display: none;
+}
+
+#name {
+    padding-top: 4px;
+    padding-left: 10px;
+}
+
+/* sidebar stling*/
+#aside {
+    background: #b92b27;
+    background: linear-gradient(70deg, rgb(4, 4, 116), rgb(139, 5, 28));
+    color: white;
+}
+
+/* navbar */
+#nav {
+    background: #b92b27;
+    background: linear-gradient(70deg, rgb(4, 4, 116), rgb(139, 5, 28));
+    color: white;
+}
+
+/* footer styling */
+
+#footer {
+    background: #b92b27;
+    background: linear-gradient(70deg, rgb(4, 4, 116), rgb(139, 5, 28));
+    color: white;
+}
