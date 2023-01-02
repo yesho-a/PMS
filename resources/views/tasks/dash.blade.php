@@ -536,7 +536,7 @@ foreach ($tasks as $k) {
             <td>
               @foreach($tpro as $t)
               @if ($t->project_id == $post->id)
-              {{$post->name}}<span class="badge badge-success ml-3 text-white">{{ $t->total }}</span></h1>
+              {{$post->title}}<span class="badge badge-success ml-3 text-white">{{ $t->total }}</span></h1>
               @endif
              
               @endforeach
@@ -678,7 +678,7 @@ foreach ($tasks as $k) {
         success: function (result) {
           jQuery.each(result, function (key, value) {
             let id = value.id;
-            let task = value.name;
+            let task = value.title;
             let status = value.completed == 1 ? "completed" : "not-completed";
             let status2 = value.completed;
             let project = value.project;
@@ -757,7 +757,7 @@ foreach ($tasks as $k) {
           jQuery.each(result, function (key, value) {
             console.log(value);
             let id = value.id;
-            let task = value.name;
+            let task = value.title;
             let status = value.completed == 1 ? "completed" : "not-completed";
             let status2 = value.completed;
             let project = value.project;
