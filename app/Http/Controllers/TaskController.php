@@ -142,5 +142,19 @@ public function table()
         $d = $id;
         return view('tasks.gantt')->with('protask',$protask)->with('project',$project)->with('d',$d);
     }
+
+
+    public function taskDash()
+    {
+         $tasks = Task::all();
+        $pro = Project::all();
+  
+        $tpro = Task::selectRaw('count(*) AS total, project_id')->groupBy('project_id')->get();
+
+       return view('tasks.dash')->with('tasks',$tasks)->with('pro',$pro)
+       ->with('tpro',$tpro);
+     
+
+    }
     
 }
