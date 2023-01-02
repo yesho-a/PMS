@@ -27,13 +27,19 @@
 
 <div class="form-group  pt-3">
     {!! Form::label('start date', 'Start Date') !!}
-   {!! Form::date('start', '', ['class' => 'form-control']) !!}
+   {!! Form::date('start_date', '', ['class' => 'form-control']) !!}
  
 </div>
 <div class="form-group  pt-3">
-    {!! Form::label('start date', 'Start Date') !!}
-   {!! Form::date('start', '', ['class' => 'form-control']) !!}
+    {!! Form::label('Due date', 'Due Date') !!}
+   {!! Form::date('due_date', '', ['class' => 'form-control']) !!}
  
+</div>
+
+<div class="form-group">
+    {!! Form::label('Project', 'Project') !!}
+   {!! Form::select('project_id', $project, null, ['class' => 'form-control']) !!}
+
 </div>
 
 <div class="form-group pt-3">

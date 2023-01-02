@@ -25,34 +25,30 @@
           </div>
           <hr />
           <ul class="nav nav-pills flex-column">
+            <li class="nav-header text-white" style="font-weight: bolder">General</li>
             <li class="nav-item">
               <a href="#" class="nav-link text-white pb-1">
                 <i
                   class="fas fa-tachometer-alt text-white"
                   aria-hidden="true"
                 ></i>
-                <span class="side-icon">Dashboard</span>
+                <span class="side-icon"  style="font-weight: bolder">Dashboard</span>
               </a>
             </li>
 
             <li>
               <a href="#" class="nav-link text-white"
-                ><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span class="side-icon"> Orders</span>
+                ><i class="nav-icon fa fa-tasks" aria-hidden="true"></i>
+                <span class="side-icon"  style="font-weight: bolder"> Tasks</span>
               </a>
             </li>
             <li>
               <a href="#" class="nav-link text-white"
                 ><i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                <span class="side-icon" id="pro"> Products</span>
+                <span class="side-icon" id="pro" style="font-weight: bolder">  Projects</span>
               </a>
             </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <i class="fa fa-user-circle" aria-hidden="true"></i>
-                <span class="side-icon"> Customers</span>
-              </a>
-            </li>
+         
           </ul>
         </aside>
       </div>

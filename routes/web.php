@@ -22,3 +22,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('project',ProjectController::class);
 Route::resource('task',TaskController::class);
+Route::get('todo', [App\Http\Controllers\TaskController::class, 'todo']);
+Route::get('task/complete/{id}','App\Http\Controllers\TaskController@complete')->name('complete');
+Route::get('/table','App\Http\Controllers\TaskController@table');

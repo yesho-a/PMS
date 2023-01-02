@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\task;
-use App\Models\Project;
+use App\Models\project;
+use DB;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -18,6 +19,35 @@ class TaskController extends Controller
         return "Hello world";
     }
 
+    public function todo()
+    {
+        $tasks = Task::all();
+        $pro = Project::all();
+
+        return view('tasks.index')->with('tasks',$tasks)->with('pro',$pro);
+    
+
+    }
+
+
+public function table()
+{
+    $tn = Task::all();
+    $y= $tn->load('project'); // eager loading
+    return  response()->json($y);
+}
+
+    public function complete($id)
+
+    {
+
+        $task = Task::findOrFail($id);
+        $task->completed = !$task->completed;
+        $task->update();
+        return redirect('task');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +55,9 @@ class TaskController extends Controller
      */
     public function create()
     {
-        return view("tasks.create");
+        $project = Project::pluck('title','id');
+       return view("tasks.create")->with('project',$project);
+   
     }
 
     /**
@@ -40,9 +72,12 @@ class TaskController extends Controller
         $this->validate($request,['title'=>'required','description'=>'required'
     ]);
 
-    $project = new Project;   
+    $project = new Task;   
     $project->title=$request->title;
     $project->description=$request->description;
+    $project->project_id= $request->project_id;
+    $project->start_date=$request->start_date;
+    $project->due_date=$request->due_date;
     $project->save();
     return redirect('/project')->with('success','Project Added');
     }
