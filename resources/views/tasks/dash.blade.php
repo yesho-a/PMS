@@ -685,12 +685,10 @@ foreach ($tasks as $k) {
             let x;
             let y;
             if (project !== null) {
-              x = value.project.name;
-              if (value.project.color !== null) {
-                y = value.project.color.color;
-              } else {
+              x = value.project.title;
+              
                 y = "green";
-              }
+              
             } else {
               x = "";
             }
@@ -757,7 +755,7 @@ foreach ($tasks as $k) {
         url: "/table",
         success: function (result) {
           jQuery.each(result, function (key, value) {
-            connsole.log(value);
+            console.log(value);
             let id = value.id;
             let task = value.name;
             let status = value.completed == 1 ? "completed" : "not-completed";
@@ -766,12 +764,10 @@ foreach ($tasks as $k) {
             let x1;
             let y;
             if (project !== null) {
-              x1 = value.project.name;
-              if (value.project.color !== null) {
-                y = value.project.color.color;
-              } else {
+              x1 = value.project.title;
+             
                 y = "green";
-              }
+              
             } else {
               x = "";
             }
