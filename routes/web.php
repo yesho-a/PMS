@@ -28,3 +28,4 @@ Route::get('/table','App\Http\Controllers\TaskController@table');
 Route::get('protask/{id}', [App\Http\Controllers\ProjectController::class, 'proTask']);
 Route::get('gantt/{id}', [App\Http\Controllers\TaskController::class, 'gantt']);
 Route::get('kaban/{id}', [App\Http\Controllers\TaskController::class, 'kaban']);
+Route::get('dash', [App\Http\Controllers\TaskController::class, 'taskDash']);
