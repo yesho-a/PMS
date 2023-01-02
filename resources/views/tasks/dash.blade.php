@@ -757,6 +757,7 @@ foreach ($tasks as $k) {
         url: "/table",
         success: function (result) {
           jQuery.each(result, function (key, value) {
+            connsole.log(value);
             let id = value.id;
             let task = value.name;
             let status = value.completed == 1 ? "completed" : "not-completed";
