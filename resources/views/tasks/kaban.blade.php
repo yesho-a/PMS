@@ -81,7 +81,7 @@ h4,h5{
             @foreach ($over as $item)
             <div class="card">
               <div class="card-block p-2">
-                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->name}}</h5><br>
+                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->title}}</h5><br>
                 <div class="pt-2">
              <span class="badge badge-danger">  <i class="fas fa-stopwatch mr-1 text-white" aria-hidden="true"></i>{{\Carbon\Carbon::today()->diffInDays($item->due_date)}} Days ovedue</span>
                 <span class="badge badge-danger"><i class="fa fa-calendar mr-1 text-white" aria-hidden="true"></i>{{$item->due_date}}</span>
@@ -99,11 +99,12 @@ h4,h5{
           <div class="p-3 bg-warning box" id="progress">
             @foreach ($progress as $item)
             <div class="card" >
-              <div class="card-block p-2">
-                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->name}}</h5><br>
-                <div class="pt-2">
-                  <span class="badge badge-warning">  <i class="fas fa-spinner mr-1 text-dark" aria-hidden="true"></i>{{\Carbon\Carbon::today()->diffInDays($item->due_date)}} Days Remaining</span>
-                     <span class="badge badge-warning"><i class="fa fa-calendar mr-1 text-dark" aria-hidden="true"></i>{{$item->due_date}}</span>
+              <div class="card-block p-1">
+                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->title}}</h5>
+                <div>
+                  <p>{{$item->description}}</p>
+                  <span class="badge bg-warning">  <i class="fas fa-spinner mr-1 text-dark" aria-hidden="true"></i><span class="text-dark">{{\Carbon\Carbon::today()->diffInDays($item->due_date)}} Days Remaining</span></span>
+                     <span class="badge bg-warning"><i class="fa fa-calendar mr-1 text-dark" aria-hidden="true"></i><span class="text-dark">{{$item->due_date}}</span></span>
                  </div>
               </div>
             </div>   
@@ -121,10 +122,13 @@ h4,h5{
             @foreach ($done as $item)
             <div class="card">
               <div class="card-block p-2">
-                <h5 class="card-title text-primary"  style="font-weight:bold">{{substr($item->name,0,38)}}</h5><br>
+                <h5 class="card-title text-primary"  style="font-weight:bold">{{$item->title}}</h5>
+                <p>{{$item->description}}</p>
+
                 <div class="pt-2">
-                  <span class="badge badge-success">  <i class="fas fa-check mr-1 text-white" aria-hidden="true"></i>Done</span>
-                     <span class="badge badge-success"><i class="fa fa-calendar mr-1 text-white" aria-hidden="true"></i>{{$item->due_date}}</span>
+
+                  <span class="badge bg-success">  <i class="fas fa-check mr-1 text-white" aria-hidden="true"></i>Done</span>
+                     <span class="badge bg-success"><i class="fa fa-calendar mr-1 text-white" aria-hidden="true"></i>{{$item->due_date}}</span>
                  </div>
               </div>
             </div>   

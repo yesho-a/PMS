@@ -37,13 +37,13 @@
             </li>
 
             <li>
-              <a href="#" class="nav-link text-white"
+              <a href="/todo" class="nav-link text-white"
                 ><i class="nav-icon fa fa-tasks" aria-hidden="true"></i>
                 <span class="side-icon"  style="font-weight: bolder"> Tasks</span>
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link text-white"
+              <a href="/project" class="nav-link text-white"
                 ><i class="fa fa-shopping-basket" aria-hidden="true"></i>
                 <span class="side-icon" id="pro" style="font-weight: bolder">  Projects</span>
               </a>

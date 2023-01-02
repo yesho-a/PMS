@@ -136,11 +136,11 @@ public function table()
       
     }
 
-    // public function gantt($id){
-    //     $project = project::find($id);
-    //     $protask = Task::where('project_id', $id)->get();
-    //     $d = $id;
-    //     return view('tasks.gantt2')->with('protask',$protask)->with('project',$project)->with('d',$d);
-    // }
+    public function gantt($id){
+        $project = project::find($id);
+        $protask = Task::where('project_id', $id)->get();
+        $d = $id;
+        return view('tasks.gantt')->with('protask',$protask)->with('project',$project)->with('d',$d);
+    }
     
 }
