@@ -14,7 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view("project.index");
+      $project = Project::all();
+      return view("project.index")->with('project',$project);
     }
 
     /**
@@ -40,9 +41,11 @@ class ProjectController extends Controller
         ]);
     
         $project = new Project;   
-        $project->name=$request->title;
+        $project->title=$request->title;
         $project->description=$request->description;
         $project->save();
+        return redirect('/project')->with('success','Project Added');
+
     }
 
     /**
