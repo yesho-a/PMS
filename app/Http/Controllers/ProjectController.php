@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\project;
+use App\Models\task;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -28,6 +29,14 @@ class ProjectController extends Controller
         return view("project.create");
     }
 
+
+    public function proTask($id){
+        $project = project::find($id);
+        $protask = Task::where('project_id', $id)->get();
+        $d = $id;
+       return view('tasks.pro')->with('protask',$protask)->with('project',$project)->with('d',$d);
+      
+    }
     /**
      * Store a newly created resource in storage.
      *

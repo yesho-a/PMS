@@ -126,4 +126,21 @@ public function table()
     {
         //
     }
+
+
+    public function kaban($id){
+        $pro = Project::find($id);
+        $d = $id;
+        $protask = Task::where('project_id', $id)->get();
+         return view('tasks.kaban')->with('pro',$pro)->with('protask',$protask)->with('d',$d);
+      
+    }
+
+    // public function gantt($id){
+    //     $project = project::find($id);
+    //     $protask = Task::where('project_id', $id)->get();
+    //     $d = $id;
+    //     return view('tasks.gantt2')->with('protask',$protask)->with('project',$project)->with('d',$d);
+    // }
+    
 }
