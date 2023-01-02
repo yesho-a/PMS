@@ -12,7 +12,7 @@
       referrerpolicy="no-referrer"
     />
     
-    <link href="./css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <title>Admin Dashboard</title>
   </head>

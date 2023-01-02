@@ -12,4 +12,10 @@ class project extends Model
     public $primaryKey = 'id';
     public $timestamps = true;
     protected $fillable = ['title'];
+
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
+
 }

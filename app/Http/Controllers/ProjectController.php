@@ -24,7 +24,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view("project.create");
     }
 
     /**
@@ -35,7 +35,14 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+            $this->validate($request,['title'=>'required','description'=>'required'
+        ]);
+    
+        $project = new Project;   
+        $project->name=$request->title;
+        $project->description=$request->description;
+        $project->save();
     }
 
     /**
