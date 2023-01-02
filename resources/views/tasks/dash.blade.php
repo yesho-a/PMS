@@ -749,7 +749,7 @@ foreach ($tasks as $k) {
         },
       });
 
-
+// Completed tasks
       $("#myDiv2").prepend(
         "<table class='table filter-table-data' id='sipi2'><thead ><tr><th class='text-white'><i class='fas fa-check mr-1'></i>Completed Tasks</th></tr></thead><tbody></tbody></table>",
       );
