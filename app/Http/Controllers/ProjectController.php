@@ -15,8 +15,12 @@ class ProjectController extends Controller
      */
     public function index()
     {
+    //   $project = Project::all();
+    //   return view("project.index")->with('project',$project);
+
       $project = Project::all();
-      return view("project.index")->with('project',$project);
+      $task = Task::selectRaw('count(*) AS total, project_id')->groupBy('project_id')->get();
+      return view('project.index')->with('project',$project)->with('task',$task);
     }
 
     /**

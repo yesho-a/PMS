@@ -53,7 +53,7 @@
         </aside>
       </div>
       <!-- sidebar -->
-      <div class="col-md-10" id="bod">
+      <div class="col-md-10 bg-info text-sm" id="bod">
         <div class="row">
           <div class="col-md-12 px-0">
             <!-- navbar -->

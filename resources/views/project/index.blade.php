@@ -84,20 +84,25 @@
              <thead>
                 <tr>
                  
-                   <th>No</th>
+                   <th>Projects</th>
                  
-                   <th>Projects </th>
+                   <th>No.Tasks </th>
                 </tr>
              </thead>
              <tbody>
               @foreach($project as $k)
                <tr>
-                <td>
-                    {{$k->id}}
-                  </td>
+              
                <td>
                 <a href="/kaban/{{$k->id}}" style="color: inherit;text-decoration: none"> {{$k->title}}</a></td>
-               
+                <td>
+                  @foreach($task as $t)
+                  @if ($t->project_id == $k->id)
+                  {{ $t->total }}
+                  @endif
+                 
+                  @endforeach
+                </td>
                </tr>
                <tr>
           

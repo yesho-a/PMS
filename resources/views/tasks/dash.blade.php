@@ -106,7 +106,7 @@ margin: 0;
 
 #pro1 td{
   padding: 0.4rem;
-  border-top: none;
+  border-top: 1px solid black;
   background-color: whitesmoke;
 }
 
@@ -525,7 +525,7 @@ foreach ($tasks as $k) {
 <hr>
 <div class="row">
   <div class = "col-5"> 
-    <table class="table ml-4 mb-0"  id="pro1" >                
+    <table class="table ml-4 mb-0 table-bordered"  id="pro1" >                
         <thead>
           <tr>
             
@@ -541,7 +541,7 @@ foreach ($tasks as $k) {
             <td>
               @foreach($tpro as $t)
               @if ($t->project_id == $post->id)
-              {{$post->title}}<span class="badge badge-success ml-3 text-white">{{ $t->total }}</span></h1>
+              {{$post->title}}<span class="badge bg-success ms-3 text-white">{{ $t->total }}</span></h1>
               @endif
              
               @endforeach
@@ -678,7 +678,7 @@ foreach ($tasks as $k) {
       let x = Array();
       let y = Array();
       $("#myDiv").prepend(
-        "<table class='table filter-table-data mb-2' id='sipi'><thead ><tr><th class='text-white'><i class='fas fa-spinner pe-1 text-white'></i>Pending Tasks</th></tr></thead><tbody></tbody></table>",
+        "<table class='table filter-table-data mb-2 table-bordered' id='sipi'><thead ><tr><th class='text-white'><i class='fas fa-spinner pe-1 text-white'></i>Pending Tasks</th></tr></thead><tbody></tbody></table>",
       );
       $.ajax({
         url: "/table",
@@ -700,7 +700,7 @@ foreach ($tasks as $k) {
               x = "";
             }
             var tds = [
-              `<td class="simon text-sm lh-sm">${task}<br><span class="badge font-italic project p-1" data-project="${x}"  style="background-color:${y};color:white" onclick="project(this)"><i>${x}</i></span></td>`
+              `<td class="simon text-sm lh-sm p-1">${task}<br><span class="badge font-italic project p-1" data-project="${x}"  style="background-color:${y};color:white" onclick="project(this)"><i>${x}</i></span></td>`
             ];
             if (status2 == 0) {
                 let display = 'none';
@@ -715,7 +715,7 @@ foreach ($tasks as $k) {
           });
     
           // Create Pagination for generated table
-          const rowsPerPage = 6;
+          const rowsPerPage = 5;
           const rows = $("#sipi > tbody").children();
           const rowsCount = rows.length;
           //  const rows = $('#my-table tbody tr');
@@ -756,7 +756,7 @@ foreach ($tasks as $k) {
 
 // Completed tasks
       $("#myDiv2").prepend(
-        "<table class='table filter-table-data mb-2' id='sipi2'><thead ><tr><th class='text-white'><i class='fas fa-check pe-1'></i>Completed Tasks</th></tr></thead><tbody></tbody></table>",
+        "<table class='table filter-table-data mb-2 table-bordered' id='sipi2'><thead ><tr><th class='text-white'><i class='fas fa-check pe-1'></i>Completed Tasks</th></tr></thead><tbody></tbody></table>",
       );
       $.ajax({
         url: "/table",
