@@ -27,7 +27,7 @@
           <ul class="nav nav-pills flex-column">
             <li class="nav-header text-white" style="font-weight: bolder">General</li>
             <li class="nav-item">
-              <a href="/dash" class="nav-link text-white pb-1">
+              <a href="/" class="nav-link text-white pb-1">
                 <i
                   class="fas fa-tachometer-alt text-white"
                   aria-hidden="true"
