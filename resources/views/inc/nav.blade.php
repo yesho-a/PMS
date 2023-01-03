@@ -1,8 +1,8 @@
 <div class="container-full">
     <div class="row">
-      <div class="col-md bg-dark" style="height: 100vh" id="aside">
+      <div class="col-md bg-dark"  id="aside">
         <!-- sidebar -->
-        <aside class="aside d-flex flex-column flex-shrink-0 p-2 text-white">
+        <aside class="aside d-flex flex-column flex-shrink-0 p-2 text-white vh-100">
           <div>
             <div class="float-start p-1">
               <img
@@ -27,7 +27,7 @@
           <ul class="nav nav-pills flex-column">
             <li class="nav-header text-white" style="font-weight: bolder">General</li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-white pb-1">
+              <a href="/dash" class="nav-link text-white pb-1">
                 <i
                   class="fas fa-tachometer-alt text-white"
                   aria-hidden="true"
@@ -65,16 +65,46 @@
               <span class="p-0" id="tog">
                 <i
                   class="fas fa-bars m-2 p-0"
-                  style="color: rgb(255, 255, 255); font-size: 40px"
+                  style="color: rgb(255, 255, 255); font-size: 30px"
                 ></i>
               </span>
               <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">Link1</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Link2</a>
-                </li>
+         <!-- Right Side Of Navbar -->
+         <ul class="navbar-nav ml-auto">
+          <!-- Authentication Links -->
+          @guest
+              <li class="nav-item">
+                  <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+              </li>
+              @if (Route::has('register'))
+                  <li class="nav-item">
+                      <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                  </li>
+              @endif
+          @else
+              <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" style="font-size: larger;
+                  font-weight:bolder" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a> 
+    
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a  class="dropdown-item" href="/">Dashboard</a>
+    
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+    
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+              </li>
+          @endguest
+      </ul>
+       
               </ul>
             </nav>
           </div>

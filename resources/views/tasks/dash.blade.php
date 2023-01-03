@@ -371,12 +371,13 @@ foreach ($tasks as $k) {
     }
 }
 ?>
+<div class="container mb-5">
 <div class="row pt-3 ml-4" >
     <span>
-        <a href="/task/create" class="btn btn-success"  id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <a href="/task/create" class="btn btn-success"  id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fa fa-plus-circle pe-1" aria-hidden="true"></i>
             Add Task</b></a>
-        <a href="" class="btn btn-primary" id="project"  data-toggle="modal" data-target="#pro"><b><i class="fas fa-project-diagram pr-2"></i>Add Project</b></a>
-        <a href="/todo" id="li-modal" class="btn btn-dark text-light"><b><i class="fas fa-tasks pr-2"></i>View Tasks</b></a>
+        <a href="/project/create" class="btn btn-primary" id="project"  data-toggle="modal" data-target="#pro"><b><i class="fas fa-project-diagram pe-1"></i>Add Project</b></a>
+        <a href="/todo" id="li-modal" class="btn btn-dark text-light"><b><i class="fas fa-tasks pe-1"></i><span class="ps-1">View Tasks</span></b></a>
       </span>
 </div>
 <hr>
@@ -387,7 +388,7 @@ foreach ($tasks as $k) {
                 <div class="card-statistic-3 p-4">
                     <div class="card-icon card-icon-large"><i class="fas fa-tasks"></i></div>
                     <div class="mb-4">
-                        <h2 class="card-title mb-0"> <strong> Total Tasks</strong></h2>
+                        <h5 class="card-title mb-0"> <strong> Total Tasks</strong></h5>
                     </div>
                     <div class="row align-items-center mb-2 d-flex">
                         <div class="col-8">
@@ -524,7 +525,7 @@ foreach ($tasks as $k) {
         <thead>
           <tr>
             
-            <th scope="col" class="text-white"> <i class="fas fa-project-diagram mr-2 text-white"></i>Project List</th>
+            <th scope="col" class="text-white"> <i class="fas fa-project-diagram pe-1 text-white"></i>Project List</th>
 
     
           </tr>
@@ -554,7 +555,7 @@ foreach ($tasks as $k) {
       </div>
   </div>
   <div class = "col-5"> 
-    <table class="table ml-4 mb-0"  id="pro2" >                
+    <table class="table ml-4 mb-2"  id="pro2" >                
         <thead>
           <tr>
             
@@ -580,6 +581,7 @@ foreach ($tasks as $k) {
       <div class="pagination1 ml-4 w-100 mb-2" style="font-size:16px;font-weight: bolder">
         <ol id="numover"></ol>
       </div>
+</div>
 </div>
 </div>
 
@@ -662,6 +664,7 @@ foreach ($tasks as $k) {
    </div>
     </div>
 </div>
+
 <script type="text/javascript">
   $(function () {
     $("#datetimepicker1").datetimepicker({format: "L", format: "YYYY-MM-DD"});
@@ -671,7 +674,7 @@ foreach ($tasks as $k) {
       let x = Array();
       let y = Array();
       $("#myDiv").prepend(
-        "<table class='table filter-table-data' id='sipi'><thead ><tr><th class='text-white'><i class='fas fa-spinner mr-1 text-white'></i>Pending Tasks</th></tr></thead><tbody></tbody></table>",
+        "<table class='table filter-table-data mb-2' id='sipi'><thead ><tr><th class='text-white'><i class='fas fa-spinner pe-1 text-white'></i>Pending Tasks</th></tr></thead><tbody></tbody></table>",
       );
       $.ajax({
         url: "/table",
@@ -749,7 +752,7 @@ foreach ($tasks as $k) {
 
 // Completed tasks
       $("#myDiv2").prepend(
-        "<table class='table filter-table-data' id='sipi2'><thead ><tr><th class='text-white'><i class='fas fa-check mr-1'></i>Completed Tasks</th></tr></thead><tbody></tbody></table>",
+        "<table class='table filter-table-data mb-2' id='sipi2'><thead ><tr><th class='text-white'><i class='fas fa-check pe-1'></i>Completed Tasks</th></tr></thead><tbody></tbody></table>",
       );
       $.ajax({
         url: "/table",

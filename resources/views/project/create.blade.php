@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md">
+        <div class="col-md p-5">
             <div class="card">
                 <div class="card-body">
                     <div class="container" style="padding: 1rem;">

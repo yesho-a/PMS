@@ -73,7 +73,7 @@
               <div class="container" style="padding: 1rem;">
                  
                         <span >
-                            <a href="/task/create" class="btn btn-dark mb-2 ml-3" id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fas fa-plus-circle pr-1"></i>Add Project</b></a>
+                            <a href="/project/create" class="btn btn-dark mb-2 ml-3" id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fas fa-plus-circle pe-1"></i>Add Project</b></a>
 
                           </span>
                       

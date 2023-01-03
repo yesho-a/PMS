@@ -58,10 +58,10 @@
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <div class="row pt-1 ml-4" >
   <span>
-      <a href="/task/create" class="btn btn-success"  id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fa fa-plus-circle" aria-hidden="true"></i>
+      <a href="/task/create" class="btn btn-success"  id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fa fa-plus-circle  pe-2" aria-hidden="true"></i>
           Add Task</b></a>
-      <a href="/protask/{{$d}}" id="li-modal" class="btn btn-dark text-light"><b><i class="fa fa-list pr-2"></i>List View</b></a>
-      <a href="/kaban/{{$d}}" id="li-modal" class="btn btn-danger text-light"><b><i class="fas fa-chart-area pr-2"></i>Board View</b></a>
+      <a href="/protask/{{$d}}" id="li-modal" class="btn btn-dark text-light"><b><i class="fa fa-list pe-2"></i>List View</b></a>
+      <a href="/kaban/{{$d}}" id="li-modal" class="btn btn-danger text-light"><b><i class="fas fa-chart-area pe-2"></i>Board View</b></a>
 
     </span>
 </div>

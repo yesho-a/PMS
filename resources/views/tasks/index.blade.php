@@ -141,11 +141,11 @@
                   <div class="row">
                     <div class="col">
                       <div class="col pr-2">
-                       <a href="/task/create" class="btn btn-dark mb-2 ml-3" id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fas fa-plus-circle pr-1"></i>Add Task</b></a>
-                       <button type="button" class="btn btn-danger btn-filter float-right mb-2 mr-1 " data-target="not-completed"><i class="fa fa-spinner pr-1" aria-hidden="true"></i>In Progress</button>
-                       <button type="button" class="btn btn-success btn-filter  float-right mb-2 mr-1" data-target="completed"><i class="fa fa-check pr-1" aria-hidden="true"></i>
+                       <a href="/task/create" class="btn btn-dark mb-2 ml-3" id="task"  data-toggle="modal" data-target="#exampleModalLong"><b><i class="fas fa-plus-circle pe-1"></i>Add Task</b></a>
+                       <button type="button" class="btn btn-danger btn-filter float-right mb-2 mr-1 " data-target="not-completed"><i class="fa fa-spinner pe-1" aria-hidden="true"></i>In Progress</button>
+                       <button type="button" class="btn btn-success btn-filter  float-right mb-2 mr-1" data-target="completed"><i class="fa fa-check pe-1" aria-hidden="true"></i>
                         Completed</button>
-                       <button type="button" class="btn btn-primary btn-filter float-right mb-2 mr-1" data-target="all"><i class="fa fa-tasks pr-1" aria-hidden="true"></i>
+                       <button type="button" class="btn btn-primary btn-filter float-right mb-2 mr-1" data-target="all"><i class="fa fa-tasks pe-1" aria-hidden="true"></i>
                         All</button>
                       
                   </div>
