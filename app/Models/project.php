@@ -18,4 +18,10 @@ class project extends Model
         return $this->hasMany(Task::class);
     }
 
+    public function color()
+    {
+        return $this->belongsTo('App\Models\Color');
+
+    }
+
 }

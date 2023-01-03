@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Color extends Model
 {
     use HasFactory;
+    public $table = 'colors';
+   
+
+    public function project()
+        {
+            return $this->hasOne('App\Models\Project');
+        }
+
 }

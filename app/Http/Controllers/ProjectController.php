@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\project;
 use App\Models\task;
+use App\Models\Color;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
