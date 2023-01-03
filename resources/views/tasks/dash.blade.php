@@ -362,11 +362,11 @@ foreach ($tasks as $k) {
     // if not null
     if ($due != null) {
        if ($today > $due && $status == 0):
-       $over[]=$k->name;
+       $over[]=$k->title;
        elseif ($today == $due && $status == 0): // Will not compile.
        $td[] =$k->name;
        elseif ($tom == $due && $status == 0): // Will not compile.
-       $next[] =$k->name;              
+       $next[] =$k->title;              
      endif;
     }
 }
@@ -696,7 +696,7 @@ foreach ($tasks as $k) {
               x = "";
             }
             var tds = [
-              `<td class="simon">${task}<br><span class="badge font-italic project"  data-project="${x}"  style="background-color:${y};color:white" onclick="project(this)">${x}</span></td>`
+              `<td class="simon">${task} <wbr><span class="badge font-italic project m-1"  data-project="${x}"  style="background-color:${y};color:white" onclick="project(this)">${x}</span></td>`
             ];
             if (status2 == 0) {
                 let display = 'none';
@@ -776,7 +776,7 @@ foreach ($tasks as $k) {
             }
            
             var tds = [
-              `<td class="simon">${task}<br><span class="badge font-italic project"  data-project="${x1}"  style="background-color:${y};color:white" onclick="project(this)">${x1}</span></td>`
+              `<td class="simon">${task}<span class="badge font-italic project m-1"  data-project="${x1}"  style="background-color:${y};color:white" onclick="project(this)">${x1}</span></td>`
             ];
             if (status2 == 1) {
                 
