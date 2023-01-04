@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\project;
 use App\Models\task;
 use App\Models\Color;
+use DB;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -57,6 +58,7 @@ class ProjectController extends Controller
         $project = new Project;   
         $project->title=$request->title;
         $project->description=$request->description;
+        $project->color_id=$request->color_id;
         $project->save();
         return redirect('/project')->with('success','Project Added');
 
@@ -105,5 +107,13 @@ class ProjectController extends Controller
     public function destroy(project $project)
     {
         //
+    }
+
+    public function colors(){
+        DB::table('colors')->insert(
+            ['color' => 'aqua']
+            );
+
+            return "Color added";
     }
 }

@@ -368,12 +368,13 @@ foreach ($tasks as $k) {
        if ($today > $due && $status == 0):
        $over[]=$k->title;
        elseif ($today == $due && $status == 0): // Will not compile.
-       $td[] =$k->name;
+       $td[] =$k->title;
        elseif ($tom == $due && $status == 0): // Will not compile.
        $next[] =$k->title;              
      endif;
     }
 }
+
 ?>
 <div class="container mb-5">
 <div class="row pt-3 ml-4" >
@@ -693,9 +694,11 @@ foreach ($tasks as $k) {
             let y;
             if (project !== null) {
               x = value.project.title;
-              
-                y = "green";
-              
+              if (value.project.color !== null) {
+                y = value.project.color.color;
+              } else {
+                y = "purple";
+              }
             } else {
               x = "";
             }
@@ -957,5 +960,12 @@ jQuery(document).ready(function () {
         rows.slice(start, end).show();
       }    
     });
+
+    function project(d) {
+  var $project = d.getAttribute("data-project");
+  console.log($('#sipi tbody tr[data-project="' + $project + '"]'));
+  $("#sipi tbody tr").css("display", "none");
+  $('#sipi tbody tr[data-project="' + $project + '"]').fadeIn("slow");
+}
     </script>
 @endsection

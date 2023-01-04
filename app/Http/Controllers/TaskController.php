@@ -33,7 +33,7 @@ class TaskController extends Controller
 public function table()
 {
     $tn = Task::all();
-    $y= $tn->load('project'); // eager loading
+    $y= $tn->load('project.color'); // eager loading
     return  response()->json($y);
 }
 

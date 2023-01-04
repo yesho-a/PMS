@@ -229,18 +229,31 @@ $(document).ready(function () {
         let status = value.completed == 1 ? "completed" : "not-completed";
         let status2 = value.completed;
         let project = value.project.title;
+        // let x;
+        // let y;
+        // if (project !== null) {
+        //   x = value.project.title;
+         
+        // } else {
+        //   x = "";
+        // }
+
         let x;
         let y;
         if (project !== null) {
           x = value.project.title;
-         
+          if (value.project.color !== null) {
+            y = value.project.color.color;
+          } else {
+            y = "purple";
+          }
         } else {
           x = "";
         }
         let checked = status2 == 1 ? "checked" : "";
         let deco = status2 == 1 ? "line-through" : "none";
         var tds = [
-          `<td class="simon"><a href=/task/${id}" style="color:inherit;text-decoration:none" >${task}</a><br><span class="badge font-italic project"  data-project="${x}"  style="background-color:red;color:white" onclick="project(this)">${x}</span></td>`,
+          `<td class="simon"><a href=/task/${id}" style="color:inherit;text-decoration:none" >${task}</a><br><span class="badge font-italic project"  data-project="${x}"  style="background-color:${y};color:white" onclick="project(this)"><i>${x}</i></span></td>`,
           "<td>" +
             `<input data-id="${id}" class='active toggle-class' type='checkbox' ${checked} id='1' name='complete' style='margin-top:5px'>` +
             "</td>",
@@ -407,6 +420,13 @@ $(document).ready(function () {
 });
 
 });
+
+function project(d) {
+  var $project = d.getAttribute("data-project");
+  console.log($('#sipi tbody tr[data-project="' + $project + '"]'));
+  $("#sipi tbody tr").css("display", "none");
+  $('#sipi tbody tr[data-project="' + $project + '"]').fadeIn("slow");
+}
 </script>
 @endsection
 

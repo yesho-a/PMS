@@ -29,3 +29,4 @@ Route::get('protask/{id}', [App\Http\Controllers\ProjectController::class, 'proT
 Route::get('gantt/{id}', [App\Http\Controllers\TaskController::class, 'gantt']);
 Route::get('kaban/{id}', [App\Http\Controllers\TaskController::class, 'kaban']);
 Route::get('/', [App\Http\Controllers\TaskController::class, 'taskDash']);
+Route::get('color', [App\Http\Controllers\ProjectController::class, 'colors']);
