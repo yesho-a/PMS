@@ -13,18 +13,27 @@ $today = \Carbon\Carbon::today()->toDateString();
 foreach ($protask as $key => $value) {
   $status = $value->completed;
   $due = $value->due_date;
+
+  // if ($due !== null) {
+  //   echo "Not null";
+  //   echo '<br>';
+  // } else {
+  //   echo " null";
+  // }
+  
   if ($status == 1):
   $diff = \Carbon\Carbon::today()->diffInDays($due);
   $done[]=$value;
-
   elseif ($today < $due && $status == 0):
   $diff = \Carbon\Carbon::today()->diffInDays($due);
   $progress[] = $value;
   elseif ($today > $due && $status == 0): 
   $diff = \Carbon\Carbon::today()->diffInDays($due);
-  $over[] =$value;            
+  $over[] =$value;    
+        
  endif;
 }
+
 
 
 ?>
@@ -60,13 +69,13 @@ h4,h5{
 
 </div>
 
-<div class="row justify-content-center pl-3 pr-3 pt-2">
+<div class="row justify-content-center pl-3 pr-3 pt-2 m-3">
   <div class="col-md text-dark">
     
       <div class="card">
           <div class="card-body">
   <div class="col">
-    <h4 class="text-primary pl-3"> <strong>Project: {{$pro->name}}</strong></h4>  
+    <h4 class="text-primary pl-3"> <strong>Project: {{$pro->title}}</strong></h4>  
   </div>
 <hr>
     <div class="container px-4 pb-2">
@@ -81,10 +90,11 @@ h4,h5{
             @foreach ($over as $item)
             <div class="card">
               <div class="card-block p-2">
-                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->title}}</h5><br>
-                <div class="pt-2">
-             <span class="badge badge-danger">  <i class="fas fa-stopwatch pe-1 text-white" aria-hidden="true"></i>{{\Carbon\Carbon::today()->diffInDays($item->due_date)}} Days ovedue</span>
-                <span class="badge badge-danger"><i class="fa fa-calendar pe-1 text-white" aria-hidden="true"></i>{{$item->due_date}}</span>
+                <h5 class="card-title text-primary" style="font-weight:bold">{{$item->title}}</h5>
+                <div>
+                  {{$item->description}}<br>
+             <span class="badge bg-danger">  <i class="fas fa-stopwatch pe-1 text-white" aria-hidden="true"></i>{{\Carbon\Carbon::today()->diffInDays($item->due_date)}} Days ovedue</span>
+                <span class="badge bg-danger"><i class="fa fa-calendar pe-1 text-white" aria-hidden="true"></i>{{$item->due_date}}</span>
             </div>
             </div>
             </div>   

@@ -72,10 +72,11 @@ src="https://www.gstatic.com/charts/loader.js"
                      
                         <ul  id="taska">
                      @foreach($protask->sortBy('due_date') as $k )
+                     
                      @if ($k->completed ==1)
                      <li style="text-decoration-line: line-through"> {{$k->title}} - {{$k->due_date}}</li>
                      @else
-                     <li> {{$k->title}} - {{$k->due_date}}</li>
+                     <li> {{$k->title}} - {{$k->due_date ?? $k->start_date }}</li>
                      @endif
             
                      @endforeach

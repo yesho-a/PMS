@@ -115,9 +115,8 @@
 
         // loop through tasks array
         tasks.forEach(function (d) {
-          d.from = new Date(Date.parse(d.created_at));
+          d.from = new Date(Date.parse(d.start_date));
           d.to = parseDate(d.due_date);
-          console.log(d.name);
         });
 
         // x - axes
@@ -192,6 +191,40 @@ let y = d3
           .attr("id", "tooltip")
           .style("opacity", 100);
 
+          tasks.forEach(function (d, i) {
+          
+            if (d.to !== null) {
+
+            } else {
+              var sym = d3.symbol().type(d3.symbolDiamond).size(150);
+      let mile = x(d.from);
+      let ymile = i * 30 + 15;
+      svg
+        .append("g")
+        .append("path")
+        .attr("d", sym)
+        .attr("fill", "red")
+        .attr("transform", "translate(" + mile + "," + ymile + ")")
+        .on("mouseover", function (i) {
+          console.log(d.title);
+          tooltip.transition().duration(200).style("opacity", 0.7);
+          tooltip
+            .html(
+              "<b>Milestone:</b> " +
+                d.title +
+                "<br>" +
+                "<b>From: </b>" +
+                d.from.toDateString(),
+            )
+            .style("left", event.pageX + 3 + "px")
+            .style("top", event.pageY + 10 + "px");
+        })
+        .on("mouseout", function (d) {
+          tooltip.transition().duration(400).style("opacity", 0);
+        });
+             }
+
+          })
         var rectangle = svg
           .append("g")
           .selectAll("rect")
@@ -216,7 +249,7 @@ let y = d3
             return getRandomColor();
           })
           .attr("transform", "translate(0,5)") .on("mouseover", function (event, d) {
-            console.log(d);
+       
             tooltip.transition().duration(200).style("opacity", 0.7);
             tooltip
               .html(
